@@ -1,5 +1,5 @@
 import { Component, OnInit, OnDestroy } from '@angular/core';
-import { Medico } from 'src/app/models/medico.model';
+import { Medico } from 'src/app/models/Medico.model';
 import { MedicoService } from '../../../services/medico.service';
 import { ModalImageService } from '../../../services/modal-image.service';
 import { BusquedaService } from '../../../services/busqueda.service';
