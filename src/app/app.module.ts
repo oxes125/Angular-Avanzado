@@ -14,8 +14,7 @@ import { AuthModule } from './auth/auth.module';
 @NgModule({
   declarations: [
     AppComponent,
-    NopageFoundComponent,
-
+    NopageFoundComponent
   ],
   imports: [
     BrowserModule,

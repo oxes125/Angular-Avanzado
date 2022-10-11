@@ -1,1 +1,62 @@
-<p>profress works!</p>
+<router-outlet></router-outlet>
+<div class="row">
+
+  <div class="col-12">
+    <div class="card">
+      <div class="card-body">
+
+        <!-- [style.width]="progreso +'%'"  [] propiedad -->
+        <!-- [style.width]="getPorcentaje"-->
+        <h4 class="card-title">Striped Progress bar {{progreso1}}</h4>
+        <div class="progress m-t-20">
+          <div class="progress-bar bg-primary progress-bar-striped active"
+           style="height:5px;"
+          [style.width]="getProgreso1"
+            role="progressbar">
+          </div>
+        </div>
+
+        <div class="progress m-t-20">
+          <div class="progress-bar bg-info progress-bar-striped active"
+           style="height:5px;"
+           [style.width]="getProgreso2"
+            role="progressbar">
+          </div>
+        </div>
+
+      </div>
+    </div>
+  </div>
+
+</div>
+
+<div class="row">
+  <div class="col-6">
+    <div class="card">
+      <div class="card-body">
+
+        <app-incrementador 
+        (valorsalida)="progreso1=$event" 
+        [progreso]="progreso1">
+      </app-incrementador>
+
+      </div>
+    </div>
+  </div>
+
+  <div class="col-6">
+    <div class="card">
+      <div class="card-body">
+
+        <app-incrementador 
+        (valorsalida)="progreso2=$event" 
+        [progreso]="progreso2"
+        [btnClass]="'btn btn-info'"
+        ><!-- [btnClass]   btnClass="btn btn-info" el menos no se puede usar para variables-->
+      </app-incrementador>
+
+      </div>
+    </div>
+  </div>
+
+</div>

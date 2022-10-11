@@ -1,4 +1,7 @@
-import { Component, OnInit } from '@angular/core';
+import { Component } from '@angular/core';
+import { UsuarioService } from '../../services/usuario.service';
+import { Usuario } from '../../models/Usuario.model';
+import { Router } from '@angular/router';
 
 @Component({
   selector: 'app-header',
@@ -6,11 +9,32 @@ import { Component, OnInit } from '@angular/core';
   styles: [
   ]
 })
-export class HeaderComponent implements OnInit {
+export class HeaderComponent  {
 
-  constructor() { }
+public imgUrl:string='';
+public usuario!:Usuario;
 
-  ngOnInit(): void {
-  }
+  constructor(private usuarioService:UsuarioService,
+              private  router:Router  ) { //asegurarse el router routerModule
+
+    this.usuario=this.usuarioService.usuario;
+    this.imgUrl=this.usuarioService.usuario.imageUrl;
+   }
+
+ logout(){
+  this.usuarioService.logout();
+ }
+
+
+ buscar(buscar:string){
+
+  if (buscar.length===0)
+ return;
+ 
+this.router.navigateByUrl(`/dashboard/buscar/${buscar}`);
+//console.log(buscar);
+
+
+ }
 
 }
