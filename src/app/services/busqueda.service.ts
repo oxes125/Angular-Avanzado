@@ -4,7 +4,7 @@ import { environment } from '../../environments/environment';
 import { map } from 'rxjs/operators';
 import { Usuario } from '../models/Usuario.model';
 import { Hospital } from '../models/Hospita.modell';
-import {Medico} from '../models/medico.model'
+import {Medico} from '../models/Medico.model'
 
 const baseUrl = environment.base_url;
 
