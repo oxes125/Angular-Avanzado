@@ -1,7 +1,7 @@
 import { Injectable } from '@angular/core';
 import { HttpClient } from '@angular/common/http';
 import { environment } from '../../environments/environment';
-import { Medico, responseMedico } from '../models/medico.model';
+import { Medico, responseMedico } from '../models/Medico.model';
 import { map } from 'rxjs/operators';
 
 const baseUrl=environment.base_url+'/medicos';
